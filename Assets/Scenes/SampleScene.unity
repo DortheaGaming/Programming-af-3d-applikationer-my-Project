@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 15255769}
-  - component: {fileID: 15255770}
+  - component: {fileID: 15255771}
   m_Layer: 0
   m_Name: RightArm_IK
   m_TagString: Untagged
@@ -151,7 +151,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 783437366}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &15255770
+--- !u!114 &15255771
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,21 +160,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 15255768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeda7bfbf984f2a4da5ab4b8967b115d, type: 3}
+  m_Script: {fileID: 11500000, guid: 796b75e345bd64d47a31edd757bd2670, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Animation.Rigging::UnityEngine.Animations.Rigging.TwoBoneIKConstraint
+  m_EditorClassIdentifier: Unity.Animation.Rigging::UnityEngine.Animations.Rigging.ChainIKConstraint
   m_Weight: 1
   m_Data:
     m_Root: {fileID: 2096913647}
-    m_Mid: {fileID: 952063497}
-    m_Tip: {fileID: 2039482290}
-    m_Target: {fileID: 1665494792}
-    m_Hint: {fileID: 2006415052}
-    m_TargetPositionWeight: 1
-    m_TargetRotationWeight: 1
-    m_HintWeight: 1
-    m_MaintainTargetPositionOffset: 1
-    m_MaintainTargetRotationOffset: 1
+    m_Tip: {fileID: 952063497}
+    m_Target: {fileID: 539270866}
+    m_ChainRotationWeight: 1
+    m_TipRotationWeight: 1
+    m_MaxIterations: 15
+    m_Tolerance: 0.0001
+    m_MaintainTargetPositionOffset: 0
+    m_MaintainTargetRotationOffset: 0
 --- !u!4 &68697208 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6158899367462381661, guid: 8ad316d836ccfe244b38b690e72a8de0, type: 3}
@@ -708,7 +707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &665029174
 Transform:
   m_ObjectHideFlags: 0
@@ -844,7 +843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &783437365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1536,11 +1535,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 665029174}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &2039482290 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -2189267025489947836, guid: 8ad316d836ccfe244b38b690e72a8de0, type: 3}
-  m_PrefabInstance: {fileID: 86826108}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2048091176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5452059102293236286, guid: 8ad316d836ccfe244b38b690e72a8de0, type: 3}
@@ -1568,7 +1562,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104223748}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
   m_Name: 
