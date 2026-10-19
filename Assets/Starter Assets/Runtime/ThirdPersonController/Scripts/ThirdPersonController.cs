@@ -151,7 +151,7 @@ namespace StarterAssets
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
         }
-
+        //Changes thank you!
         public bool IsSwinging = false;
 
         private void Update()
@@ -160,6 +160,7 @@ namespace StarterAssets
 
             if (IsSwinging == true)
             {
+                RotateWithInput();
                 GroundedCheck();
                 return;
             }
@@ -168,6 +169,14 @@ namespace StarterAssets
             GroundedCheck();
             Move();
         }
+
+        void RotateWithInput()
+        {
+            float cameraYaw = _mainCamera.transform.eulerAngles.y;
+
+            transform.rotation = Quaternion.Euler(0.0f, cameraYaw, 0.0f);
+        }
+     
 
         private void LateUpdate()
         {

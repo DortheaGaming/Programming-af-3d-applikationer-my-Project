@@ -979,6 +979,8 @@ MonoBehaviour:
   swinganchorPrefab: {fileID: 469088722244130798, guid: c619e4ce1db23014d8252525fcb1b33a, type: 3}
   anchorForwardDistance: 10
   anchorHeight: 10
+  swingGravity: 20
+  initialSwingSpeed: 10
 --- !u!65 &1950525475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -998,8 +1000,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2.1664808, z: 0.57190716}
-  m_Center: {x: 0, y: 0.7314572, z: -0.016902506}
+  m_Size: {x: 1, y: 1.8851979, z: 0.57190716}
+  m_Center: {x: 0, y: 0.87209857, z: -0.016902506}
 --- !u!54 &1950525476
 Rigidbody:
   m_ObjectHideFlags: 0
