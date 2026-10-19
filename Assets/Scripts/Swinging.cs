@@ -11,6 +11,12 @@ public class Swinging : MonoBehaviour
     [SerializeField] private float anchorForwardDistance = 0f;
     [SerializeField] private float anchorHeight = 0f;
     private GameObject currentAnchor;
+    private LineRenderer Web;
+
+    private void Start()
+    {
+        Web = GetComponent<LineRenderer>();
+    }
     void Update()
     {
         //Keyboard.current.kKey.value
@@ -55,5 +61,19 @@ public class Swinging : MonoBehaviour
         {
             canSwing = true;
         }
+    }
+
+    void LateUpdate()
+    {
+        if (currentAnchor == null)
+        {
+            Web.enabled = false;
+            return;
+        }
+
+        Web.enabled = true;
+
+        Web.SetPosition(0, transform.position + Vector3.up * 1.6f);
+        Web.SetPosition(1, currentAnchor.transform.position);
     }
 }
