@@ -977,10 +977,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Swinging
   swinganchorPrefab: {fileID: 469088722244130798, guid: c619e4ce1db23014d8252525fcb1b33a, type: 3}
-  anchorForwardDistance: 10
-  anchorHeight: 10
+  anchorForwardDistance: 15
+  anchorHeight: 20
   swingGravity: 20
   initialSwingSpeed: 10
+  swingSteeringStrength: 10
 --- !u!65 &1950525475
 BoxCollider:
   m_ObjectHideFlags: 0

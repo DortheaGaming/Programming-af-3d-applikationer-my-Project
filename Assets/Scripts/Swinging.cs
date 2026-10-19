@@ -19,6 +19,7 @@ public class Swinging : MonoBehaviour
 
     [SerializeField] private float swingGravity = 20f;
     [SerializeField] private float initialSwingSpeed = 5f;
+    [SerializeField] private float swingSteeringStrength = 10f;
 
     private Vector3 swingVelocity;
     private float ropeLength;
@@ -112,6 +113,12 @@ public class Swinging : MonoBehaviour
         }
 
         float deltaTime = Time.deltaTime;
+
+        Transform cameraTransform = Camera.main.transform;
+
+        Vector3 steeringDirection = cameraTransform.forward;
+
+        swingVelocity += steeringDirection * swingSteeringStrength * deltaTime;
 
         Vector3 anchorPosition = currentAnchor.transform.position;
 
