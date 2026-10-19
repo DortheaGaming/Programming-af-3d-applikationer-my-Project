@@ -973,6 +973,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1dbda501d2a8f48833d59904ba7300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Swinging
+  swinganchorPrefab: {fileID: 469088722244130798, guid: c619e4ce1db23014d8252525fcb1b33a, type: 3}
+  anchorForwardDistance: 10
+  anchorHeight: 10
 --- !u!65 &1950525475
 BoxCollider:
   m_ObjectHideFlags: 0
