@@ -152,9 +152,17 @@ namespace StarterAssets
             _fallTimeoutDelta = FallTimeout;
         }
 
+        public bool IsSwinging = false;
+
         private void Update()
         {
             _hasAnimator = TryGetComponent(out _animator);
+
+            if (IsSwinging == true)
+            {
+                GroundedCheck();
+                return;
+            }
 
             JumpAndGravity();
             GroundedCheck();

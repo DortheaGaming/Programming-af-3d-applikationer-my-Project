@@ -12,10 +12,12 @@ public class Swinging : MonoBehaviour
     [SerializeField] private float anchorHeight = 0f;
     private GameObject currentAnchor;
     private LineRenderer Web;
+    private ThirdPersonController controller;
 
     private void Start()
     {
         Web = GetComponent<LineRenderer>();
+        controller = GetComponent<ThirdPersonController>();
     }
     void Update()
     {
@@ -37,6 +39,7 @@ public class Swinging : MonoBehaviour
 
                 //spawns anchor.
                 currentAnchor = Instantiate(swinganchorPrefab, anchorPosition, Quaternion.identity);
+                controller.IsSwinging = true;
             }
         }  
     }
@@ -52,7 +55,8 @@ public class Swinging : MonoBehaviour
                       Destroy(currentAnchor);
                      currentAnchor = null;
                     }
-        }
+            controller.IsSwinging = false;
+            }
     }
 
      void OnTriggerExit(Collider collision)
