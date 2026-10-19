@@ -46,37 +46,9 @@ public class Swinging : MonoBehaviour
             {
                 Debug.Log("You can swing!");
 
-                //the anchor position is transform.forward, which checks the characters viewing direction. Then adds predifined numbers to it. 
-                Vector3 anchorPosition = transform.position + transform.forward * anchorForwardDistance + Vector3.up * anchorHeight;
-
-                if (currentAnchor != null)
-                {
-                    Destroy(currentAnchor);
-                }
-
-                //spawns anchor.
-                currentAnchor = Instantiate(swinganchorPrefab, anchorPosition, Quaternion.identity);
-
-                if (firstSwing == true) 
-                { 
-                    characterController.Move(Vector3.up * 3.7f); 
-                    firstSwing = false;
-                }
-
-                //Swinging!
-                ropeLength = Vector3.Distance(transform.position + Vector3.up * 1.6f, currentAnchor.transform.position);
-
-                Vector3 directionFromAnchor =
-                    (transform.position - currentAnchor.transform.position).normalized;
-
-                Vector3 swingDirection =
-                    Vector3.ProjectOnPlane(transform.forward, directionFromAnchor).normalized;
-
-                swingVelocity = swingDirection * initialSwingSpeed;
-
-                controller.IsSwinging = true;
+                
             }
-
+            setAnchor();
         }
 
         if (Mouse.current.leftButton.wasPressedThisFrame)
@@ -171,6 +143,39 @@ public class Swinging : MonoBehaviour
         characterController.Move(
             correctedPosition - transform.position
         );
+    }
+
+    void setAnchor()
+    {
+        //the anchor position is transform.forward, which checks the characters viewing direction. Then adds predifined numbers to it. 
+        Vector3 anchorPosition = transform.position + transform.forward * anchorForwardDistance + Vector3.up * anchorHeight;
+
+        if (currentAnchor != null)
+        {
+            Destroy(currentAnchor);
+        }
+
+        //spawns anchor.
+        currentAnchor = Instantiate(swinganchorPrefab, anchorPosition, Quaternion.identity);
+
+        if (firstSwing == true)
+        {
+            characterController.Move(Vector3.up * 3.7f);
+            firstSwing = false;
+        }
+
+        //Swinging!
+        ropeLength = Vector3.Distance(transform.position + Vector3.up * 1.6f, currentAnchor.transform.position);
+
+        Vector3 directionFromAnchor =
+            (transform.position - currentAnchor.transform.position).normalized;
+
+        Vector3 swingDirection =
+            Vector3.ProjectOnPlane(transform.forward, directionFromAnchor).normalized;
+
+        swingVelocity = swingDirection * initialSwingSpeed;
+
+        controller.IsSwinging = true;
     }
 }
 
